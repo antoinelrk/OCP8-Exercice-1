@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed1db230-0c04-4318-afe4-f04d16d5b802" name="Changes" comment="Update .gitignore and remove idea">
-      <change afterPath="$PROJECT_DIR$/public/adminer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/véhiloc-symfony.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,14 +202,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732513113193</updated>
-      <workItem from="1732513114510" duration="1848000" />
+      <workItem from="1732513114510" duration="1964000" />
     </task>
+    <task id="LOCAL-00001" summary="Remove .idea folder">
+      <option name="closed" value="true" />
+      <created>1732515182508</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732515182508</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Update .gitignore and remove idea" />
+    <MESSAGE value="Remove .idea folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove .idea folder" />
   </component>
 </project>
