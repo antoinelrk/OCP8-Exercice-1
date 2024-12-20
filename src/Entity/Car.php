@@ -33,7 +33,7 @@ class Car
     private ?int $places = null;
 
     #[ORM\ManyToOne(inversedBy: 'cars')]
-    private ?User $user_id = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -69,9 +69,14 @@ class Car
         return $this->month_price;
     }
 
-    public function setMonthPrice(int $month_price): static
+    public function getFormattedMonthPrice(): ?string
     {
-        $this->month_price = $month_price;
+        return number_format($this->getMonthPrice() / 100, 2, ',', ' ');
+    }
+
+    public function setMonthPrice(string $month_price): static
+    {
+        $this->month_price = (int) str_replace(',', '', $month_price);
 
         return $this;
     }
@@ -81,9 +86,14 @@ class Car
         return $this->day_price;
     }
 
-    public function setDayPrice(int $day_price): static
+    public function getFormattedDayPrice(): ?string
     {
-        $this->day_price = $day_price;
+        return number_format(intval($this->day_price) / 100, 2, ',', ' ');
+    }
+
+    public function setDayPrice(string $day_price): static
+    {
+        $this->day_price = (int) str_replace(',', '', $day_price);
 
         return $this;
     }
@@ -91,6 +101,11 @@ class Car
     public function getGearbox(): ?string
     {
         return $this->gearbox;
+    }
+
+    public function getFormattedGearbox(): ?string
+    {
+        return $this->getGearbox() === 'manual' ? 'Manuelle' : 'Automatique';
     }
 
     public function setGearbox(string $gearbox): static
@@ -112,14 +127,14 @@ class Car
         return $this;
     }
 
-    public function getUserId(): ?User
+    public function getUser(): ?User
     {
-        return $this->user_id;
+        return $this->user;
     }
 
-    public function setUserId(?User $user_id): static
+    public function setUser(?User $user): static
     {
-        $this->user_id = $user_id;
+        $this->user = $user;
 
         return $this;
     }

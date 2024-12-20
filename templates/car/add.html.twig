@@ -8,54 +8,39 @@
         <h1>Ajouter une voiture</h1>
 
         {{ form_start(form) }}
-            <div class="input">
-                {{ form_row(form.name, {label: 'Nom de la voiture'}) }}
+            <div>
+                {{ form_errors(form) }}
             </div>
 
             <div class="input">
-                {{ form_row(form.description, {label: 'Description'}) }}
+                {{ form_row(form.name) }}
+            </div>
+
+            <div class="input">
+                {{ form_row(form.description) }}
             </div>
 
             <div class="flex-input">
                 <div class="input">
-                    {{ form_row(form.month_price, {label: 'Prix mensuel'}) }}
+                    {{ form_row(form.month_price) }}
                 </div>
 
                 <div class="input">
-                    {{ form_row(form.day_price, {label: 'Prix journalier'}) }}
+                    {{ form_row(form.day_price) }}
                 </div>
             </div>
 
             <div class="flex-input">
                 <div class="input">
+                    {{ form_row(form.places) }}
+                </div>
 
+                <div class="input">
+                    {{ form_row(form.gearbox) }}
                 </div>
             </div>
 
-            <button class="btn-add">Ajouter</button>
+            {{ form_row(form.save) }}
         {{ form_end(form) }}
-            <div class="flex-input">
-                <div class="input">
-                    <label for="places">Nombre de places</label>
-                    <select id="places" name="places">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                    </select>
-                </div>
-                <div class="input">
-                    <label for="motor">Boîte de vitesse</label>
-                    <select id="motor" name="motor">
-                        <option>Manuelle</option>
-                        <option>Automatique</option>
-                    </select>
-                </div>
-            </div>
     </section>
 {% endblock %}
