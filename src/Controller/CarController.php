@@ -13,14 +13,6 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class CarController extends AbstractController
 {
-    #[Route('/cars', name: 'cars')]
-    public function index(CarRepository $carRepository): Response
-    {
-        return $this->render('car/index.html.twig', [
-            'cars' => $carRepository->findAll(),
-        ]);
-    }
-
     #[Route('/cars/show/{id}', name: 'cars.show')]
     public function show(Car $car): Response
     {
@@ -41,7 +33,9 @@ class CarController extends AbstractController
             $entityManager->persist($entity);
             $entityManager->flush();
 
-            return $this->redirectToRoute('cars');
+            return $this->redirectToRoute('cars.show', [
+                'id' => $entity->getId(),
+            ]);
         }
 
         return $this->render('car/add.html.twig', [
@@ -50,12 +44,12 @@ class CarController extends AbstractController
         ]);
     }
 
-//    #[Route('/cars/add', name: 'cars.add')]
-//    public function delete(Request $request, Car $car, EntityManagerInterface $entityManager): Response
-//    {
-//        $entityManager->remove($car);
-//        $entityManager->flush();
-//
-//        return $this->redirectToRoute('cars');
-//    }
+    #[Route('/cars/delete/{id}', name: 'cars.delete')]
+    public function delete(Request $request, Car $car, EntityManagerInterface $entityManager): Response
+    {
+        $entityManager->remove($car);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('home');
+    }
 }

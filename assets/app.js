@@ -11,9 +11,8 @@ import './styles/styles.css'
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉')
 
 document.addEventListener('DOMContentLoaded', () => {
-  const floatInputs = document.querySelectorAll('.js-price')
-
-  floatInputs.forEach(input => {
+  // Apply validation rule on prices inputs
+  document.querySelectorAll('.js-price').forEach(input => {
     input.addEventListener('input', () => {
       input.value = input.value.replace(/[^0-9,]/g, '')
 
@@ -25,4 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   })
+
+  // Setup confirmation for input
+  document.querySelectorAll('.confirm-link').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      const message = link.getAttribute('data-message')
+      const userConfirmed = confirm(message)
+
+      if (!userConfirmed) {
+        event.preventDefault()
+      }
+    });
+  });
 })

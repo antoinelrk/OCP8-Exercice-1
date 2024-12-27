@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Véhicloc{% endblock %}
 
 {% block hero %}
 <div class="flex-header">
@@ -27,7 +27,11 @@
                         <p>ou similaire | Saint-Étienne</p>
                     </a>
                     <div>
-                        <a href="#">
+                        <a
+                            class="confirm-link"
+                            data-message="Vous êtes sur le point de supprimer un véhicule, continuer ?"
+                            href="{{ url('cars.delete', { id: car.id }) }}"
+                        >
                             <img
                                 src="{{ asset('icons/trash.png') }}"
                                 alt="Supprimer"
