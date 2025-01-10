@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CarController!{% endblock %}
+{% block title %}
+    {{ car.getName() }}
+{% endblock %}
 
 {% block body %}
     <section id="car">
